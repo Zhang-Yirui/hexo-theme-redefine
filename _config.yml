@@ -403,6 +403,10 @@ footer:
     enable: false # Whether to enable
     number: # ICP record number
     url: # ICP record url
+    psr:
+      enable: false # Whether to enable
+      number: # Record number
+      url: # https://beian.mps.gov.cn/
 # FOOTER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 

@@ -60,7 +60,20 @@
                 <% } else { %>
                 https://beian.miit.gov.cn
                 <% } %>
-                "><%= theme.footer.icp.number %></a></div>
+                "><%= theme.footer.icp.number %></a>
+                <% if (theme.footer.icp.psr.enable && theme.footer.icp.psr.hasOwnProperty('number')) {
+                    let number = theme.footer.icp.psr.number;
+                    let match = number.match(/公网安备\s*(\d+)\s*号/);
+                    let code = match ? match[1] : '';
+                    let url = "https://beian.mps.gov.cn"
+                    if (theme.footer.icp.psr.hasOwnProperty('url') && theme.footer.icp.psr.url) {
+                        url = theme.footer.icp.psr.url;
+                    }
+                    url = url.replace(/\/$/, '') + "/#/query/webSearch?code=" + code; %>
+                    &nbsp;|&nbsp;
+                    <a target="_blank" rel="noreferrer nofollow" href="<%= url %>"><%= number %></a>
+                <% } %>
+            </div>
         <% } %>
         <% if (theme.footer.runtime === true) {%>
             <div>
